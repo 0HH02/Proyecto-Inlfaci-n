@@ -1,0 +1,337 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Inflación</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+  <div class="container section00 claro container-section00">
+    <div id="section00" class="container fixed">
+      <h1>El <br>juego<br> de los <br>infladores</h1>
+      <div class="globo">
+        <img src="assets/verde.png" alt="globo">
+      </div>
+    </div></div>
+    <div class="container section0 claro container-section0">
+      <div id="section0" class="container">
+        <div class="text-introduction-title-10">
+          <p>
+            Si te has movido en el escenario de la vida cubana, seguramente has presenciado dos cambios notables: la entrada en escena de las MIPYMES y el aumento impresionante de precios en productos y servicios. Sucesos que para la mayoría guardan una estrecha relación de causalidad.<br> Todo parece indicar que desde la legalización de las MIPYMES en agosto del 2021 este sector se ha aprovechado de las necesidades del pueblo cubano para arrancarles hasta el último peso de sus bolsillos, volviéndose cada día más ricos mientras que el cubano de a pie se vuelve cada día más pobre.<br><br> <span class="span-verde">¿Pero cuánto influye realmente las MIPYMES en los precios de los productos?</span><br><br> El día de hoy les presento algunas conclusiones sustentadas en datos oficiales de la ONEI<br> que ayudarán a esclarecer las dudas.
+          </p>
+        </div>
+      </div></div>
+  <div class="container-introduction claro">
+    <div class="container claro" id="grafics">
+      <div class="map-introduction">
+        <div id="mapTime" data-depth="1"></div>
+      </div>
+      <div class="text-introduction invisible">
+        <p>
+          Empecemos por el principio: Años antes de la legalización de las
+          MIPYMES experimentábamos un nivel económico que si bien no destacaba
+          entre los otros países del mundo se iba recuperando poco a poco de
+          la crisis del período especial. Este período se caracterizó por una relativa estabilidad en los precios y en las tasa de cambio de la moneda unido con una amplia variedad de países con
+          presidentes de izquierdas. Poseíamos entonces 2 fuentes de ingreso de divisas importantes: las exportaciones de servicios (fundamentalmente servicios médicos) a países políticamente cercanos  y el turismo. 
+        </p>
+      </div>
+      <div class="text-introduction2 invisible">
+        <p>
+          Pero luego del 2012 empezamos a ver un descenso en las exportaciones vinculado a la rescisión de contratos de exportación de servicios por parte de los nuevos gobiernos de derecha en auge. Esto nos deja en
+          el 2020, pleno inicio de la pandemia del coronavirus, fenómeno que
+          impactaría notablemente en las economías de todos países, frenando
+          el desarrollo que tenían algunos y agudizando el atraso que tenían
+          otros.
+        </p>
+      </div>
+      <div class="year-introduction invisible">
+        <p>1990</p>
+      </div>
+      <div class="pib-introduction">
+        <div id="grafic1" class="grafic1 invisible"></div>
+      </div>
+      <div class="pib-introduction2">
+        <div id="grafic2" class="grafic2 invisible"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-section2">
+    <div id="section2" class="container section2 white">
+      <div class="text-introduction3_1">
+        <p>
+          Las <span class="span-rojo">caída</span> de las exportaciones vació las bóvedas de divisas en las cuales estaba respaldada el CUC y con la llegada de la pandemia el turismo se volvió prácticamente inexistente por lo que la búsqueda de nuevas fuentes de divisas se tornó una necesidad imperiosa para mantener las importaciones que necesitábamos.
+        </p>
+      </div>
+      <div class="hucha_image">
+        <img src="assets/hucha.gif" alt="Alcancía rota" />
+      </div>
+    </div>
+  </div>
+  <div class="container section3 claro container-section3">
+    <div id="section3" class="container">
+      <div class="text-introduction3">
+        <p>
+          En estas circunstancias es cuando se implementan medidas como la aparición de las tiendas en
+          MLC para recaudar divisas directamente de la población, la eliminación del
+          CUC y el rescale los precios y salarios del país, para lo cual se <span class="span-rojo">emite
+            una gran cantidad de moneda nacional.</span>
+        </p>
+      </div>
+      <div id="inflacion"></div>
+    </div>
+  </div>
+  <div class="container section4 claro container-section4">
+    <div id="section4" class="container">
+      <div class="first-container4">
+        <div class="row4">
+          <div class="text-introduction4 traslade-ot-left">
+            <p>
+              Estamos en Agosto del 2021, nuestras exportaciones y el turismo
+              disminuyeron notablemente, sin divisas para poder pagar a ortos
+              países nuestras importaciones sufrieron de un efecto en cadena y
+              también cayeron.
+            </p>
+          </div>
+          <div class="grafics4_1 traslade-ot-right">
+            <div id="importaciones-grafic"></div>
+          </div>
+        </div>
+        <div class="row4">
+          <div class="grafics4_2 traslade-ot-left">
+            <div id="oferta-grafic"></div>
+          </div>
+          <div class="text-introduction4 traslade-ot-right">
+            <p>
+              El mercado nacional no suplía la demanda de la población y dejaron de aparecer, incluso, productos de primera necesidad.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="second-container4 invisible">
+        <div class="row4_1 invisible row4">
+          <div class="text-introduction4">
+            <p>
+              En una economía donde no se emite dinero la escases<br> de productos
+              hace que su <span class="span-azul">precio relativo</span> aumente, pero<br> si la escases es
+              general, significa que hay mucho dinero<br> sin respaldado productivo.<br> (Hay
+              mucho dinero y pocos productos, podemos intercambiarlos por más
+              dinero).
+            </p>
+          </div>
+          <div class="gift4_1 gift4">
+            <img src="assets/inflacion (1).gif" alt="Inflación" />
+          </div>
+        </div>
+        <div class="row4_2 invisible row4">
+          <div class="text-introduction4">
+            <p>
+              Este fenómeno por si solo haría que los precios aumenten en
+              proporción a la escases, pero si le agregamos el efecto
+              inflacionario generado por la emisión de moneda en el 2020
+              tenemos una <span class="span-rojo">perdida</span> importante del poder de compra del peso que se reflejará en
+              la economía más pronto que tarde.
+            </p>
+          </div>
+          <div class="gift4_2 gift4">
+            <img src="assets/inflacion.gif" alt="Inflación" />
+          </div>
+        </div>
+        <div class="row4_3 invisible row4">
+          <div class="text-introduction4">
+            <p>
+              Es este el escenario al que entran las MIPYMES como los actores
+              económicos <span class="span-verde">necesarios</span> para resolver la escases de oferta que
+              existía. Así es como entran los nuevos protagonista
+              <span>al mismo</span> tiempo que la subida de precios y no como
+              causantes de la misma.
+            </p>
+          </div>
+          <div class="gift4_3 gift4">
+            <img src="assets/idea.gif" alt="Idea" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container section5 claro container-section5">
+    <div id="section5" class="container">
+      <div class="text-introduction-title">
+        <p>
+          No obstante, sigue pareciendo que las MIPYMES ponen los precios más
+          alto de lo que deberían... mmm... esto es verdad.<br> Pero solo en
+          cierto sentido. Veamos:
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container section6 claro container-section6">
+    <div id="section6" class="container">
+      <div class="absolute container">
+        <div id="equilibrio-grafic"></div>
+      </div>
+    </div>
+    <div class="text-section6">
+      <div class="text-introduction6">
+        <p>
+          La <span>inflación</span>, en economía, es el aumento
+          <span>generalizado</span> y sostenido de los <span class="span-azul">precios</span> de los bienes y
+          servicios existentes en el mercado, al menos eso dice Wikipedia.
+        </p>
+      </div>
+      <div class="text-introduction6">
+        <p>
+          En economía se llama <span class="span-verde">precio de equilibrio</span> al precio resultante de
+          equiparar la cantidad de dinero por la que se vendería un bien con
+          la cantidad de dinero por la que se compraría ese bien.
+        </p>
+      </div>
+      <div class="text-introduction6">
+        <p>
+          Digamos que existe una <span class="span-verde">línea asintótica</span> (precio de equilibrio) a la
+          que se acerca el precio de un producto dada una cantidad de dinero
+          fija en el mercado. Cuando aumentas la cantidad de dinero en
+          circulación esto hace que el precio de equilibrio aumente también
+          por lo que ahora habrán fluctuaciones en un nuevo nivel de precios,
+          es decir: los precios se <span class="span-rojo">inflan</span>.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container section7 claro container-section7">
+    <div id="section7" class="container">
+      <div class="text-introduction7">
+        <p>
+          Supongamos que eres un dueño de MIPYME sin grandes ambiciones
+          económicas, solo necesitas que tu empresa brinde un servicio de
+          calidad y ganarte un salario humilde. Quieres hacer una importación
+          de un contenedor de mercancía que te tomará 3 meses venderlo.
+          <br><br>Compras el contenedor en unos 4000 pesos (mantengamos los números
+          sencillos para no perdernos con grandes cuentas), tienes unos 1000
+          pesos de gastos de logística y piensas ganarte 100 pesos por cada
+          contenedor, lo cual te parece que es el mínimo de dinero por el cual
+          deberías trabajar en los próximos 3 meses de tu vida, por menos que
+          eso, te parece una explotación.<br><br> Así que divides los 5100 pesos entre
+          los 100 productos que traía<br> el contenedor y vendes cada mercancía a
+          51 pesos. Vendes todo en el período previsto y cuando te dispones a
+          comprar tu nuevo contenedor <br>te enteras de que el precio subió (dicen
+          que por la inflación) y ahora cuesta 3050 pesos (solo ganaste 50
+          pesos), en "compensación", el precio del producto subió a 52.
+        </p>
+      </div>
+      <div class="pregunta-section7">
+        <p>¿Qué harás luego de comprar el nuevo contenedor?</p>
+      </div>
+      <div class="buttons-container">
+        <div class="option invisible-button">
+          <p>
+            Pones el precio del producto a 52 pesos, reflejando la inflación
+            actual. Solo ganarás 50 pesos o menos (en dependencia de la
+            inflación futura, pudiendo incluso generar pérdidas).
+          </p>
+        </div>
+        <div class="option verde div-click">
+          <p>
+            Pones el precio del producto a 55 pesos, esperando que la
+            inflación siga aumentando, ganas tus 100 pesos pero con el riesgo
+            de ser menos competitivo y con la preocupación de ganarte una
+            reputación de carero.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="final-section displayNone div-destino">
+  <!-- <div class="final-section div-destino"> -->
+    <div class="container section8 claro container-section8">
+      <div id="section8" class="container">
+        <div class="text-title2">
+          <p>
+            Exacto, el <span class="span-rojo">miedo</span> justificado que trae la inflación al sector
+            privado hace que eleven los precios de los productos antes de que
+            la <span class="span-rojo">inflación</span> haga efecto para evitar pérdidas.
+          </p>
+        </div>
+        <div class="section8-image">
+          <img src="assets/beneficios.png" alt="beneficios">
+        </div>
+      </div>
+    </div>
+    <div class="container section9 claro container-section9">
+      <div id="section9" class="container">
+        <div class="grafic-container9">
+          <div id="ofertaVSdemanda-grafic"></div>
+          <div class="text-title">
+            <p>Precio del mercado: <span class="precio span-azul">200<span></p>
+            <div class="text-subtitle">
+              <div class="oferta-p">
+                <p>Oferta: <span class="oferta">700 <span></p>
+                <div class="subir">
+                  <img src="assets/incrementar.png" alt="subir">
+                </div>
+              </div>
+              <p>Demanda: <span class="demanda">800<span></p>
+            </div>
+          </div>
+        </div>
+        <div class="text-introduction9 invisible">
+          <p>
+            <span>¿Esto significa que pueden subir los precios tanto como quieran?<br><br></span>
+            Imaginemos que existe (sabemos que si existe) un dueño de una MIPYME malicioso que se aprovecha de la
+            situación y usando la excusa anterior sube los precios desenfrenadamente. Si subes el <span class="span-azul">precio</span> y mantienes la
+            oferta la demanda cae, por lo que ya no te van a comprar tantos productos como antes e igual vas a tener
+            pérdidas. Por tanto para la próximas venta tendrás que bajar los precios para seguir siendo rentable.
+            <br><br>Así es como funcionan las fluctuaciones de mercado. Las MIPYMES tratando de ganar lo más lo más posible suben los precios hasta que nadie está dispuesto a comprarles, lo que los lleva a bajar los precios, entrando en un ciclo que se acerca más y más al <span class="span-verde">precio de equilibrio.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container section10 claro container-section10">
+      <div id="section10" class="container">
+        <div class="text-introduction-title-10">
+          <p>
+            En resumen:<br> Si, las MIPYMES pueden subir los precios de los productos generando una cierta inflación por expectativa pero <span>no</span>, no pueden subir los precios de manera ilimitada ni sostenida en el tiempo. El principal agravante de ello y lo que lo hace permanente es la cantidad de dinero en circulación emitida por el banco.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container section11 claro container-section11">
+      <div class="windowHeigth ">
+        <div id="section11" class="container invisible visible">
+            <div class="text-introduction11 ">
+              <p>
+                Las circunstancias externas y las decisiones de nuestro pasado nos han traído a un panorama económico complicado. Sentimos muchas veces la necesidad de culpar a un tercero de nuestros males y no es difícil comprar las ideas pesimistas que nos cuentan y, que en algunos aspectos, coinciden con nuestra propia experiencia. Pero <span class="span-verde">la verdad</span> es que el ímpetu de superación que han demostrado los nuevos actores económicos y el esfuerzo de las personas más inteligentes del estado están haciendo que nos <span class="span-verde">recuperemos</span> del bache económico que nos dejó nuestro pasado. <br>Parar el atraso es como parar una bola que rueda hacia ti en una superficie plana; al principio toma más tiempo y esfuerzo pero si se detiene bien, empujarla y hacerla avanzar será cada vez más fácil. 
+              </p>
+            </div>
+            <div id="optimist-grafic"></div>
+        </div>
+      </div>
+      <div id="section11_2" class="container invisible">
+        <div class="text-introduction-title-11_2">
+          <p>
+            :)   
+          </p>
+          <div class="back-button"><p>Volver a leer</p></div>
+        </div>
+      </div>
+    </div>
+      <footer>
+
+      </footer>
+  </div>
+  <script type="module" src="scripts/script_section1.js"></script>
+  <script type="module" src="scripts/script_section2.js"></script>
+  <script type="module" src="scripts/script_section3.js"></script>
+  <script type="module" src="scripts/script_section4.js"></script>
+  <script type="module" src="scripts/script_section6.js"></script>
+  <script type="module" src="scripts/script_section7.js"></script>
+  <script type="module" src="scripts/script_section9.js"></script>
+  <script type="module" src="scripts/script_section10.js"></script>
+
+</body>
+
+</html>
