@@ -570,7 +570,7 @@ span {
     height: 70%;
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background-color: white;
     border-radius: 100px;
     border: 1px solid #c2c1c1;
@@ -716,7 +716,7 @@ img {
 .text-introduction11 {
     width: 40%;
     margin-left: 5%;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .windowHeigth {
