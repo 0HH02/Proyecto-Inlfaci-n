@@ -65,8 +65,8 @@ function ShowGrafic2(paused){
 fetch('data/import-export-pib-emision.json').then(response => response.json()).then(data => {
     data = data.pib.Last;
     var Tipo = ['PIB (Millones)', 'Importaciones (Cientos de miles)', 'Exportaciones (Cientos de miles)'];
-    chartDom.style.width = '1000px';
-    chartDom.style.height = '500px';
+    chartDom.style.width = '800px';
+    chartDom.style.height = '600px';
 
     const datasetWithFilters = [];
     const seriesList = [];
