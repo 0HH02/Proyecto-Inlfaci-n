@@ -1,4 +1,5 @@
 var chartDom = document.getElementById('optimist-grafic');
+var myChart = echarts.init(chartDom);
 // var chartElement = echarts.init(chartDom);
 
 
@@ -12,13 +13,15 @@ window.addEventListener('scroll', () => {
     const section2 = document.getElementById('section11_2');
 
 
-    if(container.getBoundingClientRect().top <= 500){
+    if(!document.querySelector('.final-section').classList.contains('displayNone') && container.getBoundingClientRect().top <= 300){
         if(!IsOut){
-            ShowGrafic2();
+            myChart.clear();
+            ShowGrafic2(false);
+            // console.log(document.querySelector('.final-section').classList.contains('displayNone'));
             IsOut = true;
         }
     }
-    if (container.getBoundingClientRect().top <= 0) {
+    if (!document.querySelector('.final-section').classList.contains('displayNone') && container.getBoundingClientRect().top <= 0) {
         section.classList.add('fixed3');
         
     }else if (container.getBoundingClientRect().bottom >= window.innerHeight) {
@@ -27,11 +30,12 @@ window.addEventListener('scroll', () => {
       else{
         section.classList.remove('fixed3');
       }
-    if(section2.getBoundingClientRect().top <= 0){
+    if(!document.querySelector('.final-section').classList.contains('displayNone') && section2.getBoundingClientRect().top <= 100){
         section2.classList.add('visible');
         section.classList.remove('visible');
     }
     else{
+        console.log(section2.getBoundingClientRect().top);
         section2.classList.remove('visible');
         section.classList.add('visible');
     }
@@ -53,17 +57,16 @@ document.querySelector('.back-button').addEventListener('click', function() {
 
 
 
+  ShowGrafic2(true);
 
 
 
-
-function ShowGrafic2(){
+function ShowGrafic2(paused){
 fetch('data/import-export-pib-emision.json').then(response => response.json()).then(data => {
     data = data.pib.Last;
     var Tipo = ['PIB (Millones)', 'Importaciones (Cientos de miles)', 'Exportaciones (Cientos de miles)'];
     chartDom.style.width = '1000px';
     chartDom.style.height = '600px';
-    var myChart = echarts.init(chartDom);
 
     const datasetWithFilters = [];
     const seriesList = [];
@@ -109,8 +112,7 @@ fetch('data/import-export-pib-emision.json').then(response => response.json()).t
     });
     });
     var option = {
-        animation: true,
-        animationDuration: 15000,
+        animationDuration: paused ? Infinity : 15000,
         dataset: [
         {
             id: 'dataset_raw',

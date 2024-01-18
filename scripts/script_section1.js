@@ -25,14 +25,14 @@ window.addEventListener('scroll', () => {
 
     // Verifica si el objeto está en el centro de la pantalla
 
-    if (container.top <= 0) {
+    if (container.top <= 0) { 
       index = Math.floor((-(container.top)/(container.bottom - container.top - window.innerHeight)*30))<=30?Math.floor((-(container.top)/(container.bottom - container.top - window.innerHeight)*30)):30;
       p2.children[0].innerHTML = `${index + 1990}`
       if (import_export_pib_emision){CargarMapa(Mapa, Datos, index);}
 
       if (index < 22){
         p1.classList.add('visible');
-        // p1.classList.add('next-move-text');
+        p1.classList.add('next-move-text');
         p2.classList.add('visible');
         p1.classList.remove('next-move-text');
         p1_2.classList.remove('visible');
@@ -54,7 +54,7 @@ window.addEventListener('scroll', () => {
           // Si el objeto está completamente en pantalla, agrega la clase 'move-right'
           IsView2 = true
           PIB_Graf_Draw(pib_graf2, import_export_pib_emision.pib.Second, 'Estadísticas en Cuba después del 2012', 700, 300)
-          // pib_graf.classList.add('move-right');
+          pib_graf.classList.add('move-right');
           pib_graf2.classList.add('visible');
           pib_graf2.classList.add('move-left');
 
@@ -63,7 +63,7 @@ window.addEventListener('scroll', () => {
 
         p1.classList.remove('visible');
         p1.classList.add('next-move-text');
-        // p2.classList.add('next-move');
+        p2.classList.add('next-move');
       }
       grafics.classList.add('fixed');
       grafics.classList.remove('invisible');
@@ -72,8 +72,8 @@ window.addEventListener('scroll', () => {
     else if (container.bottom >= window.innerHeight) {
       // grafics.classList.add('invisible');
       grafics.classList.remove('fixed');
-      p1.classList.remove('visible');
-      p2.classList.remove('visible');
+      // p1.classList.remove('visible');
+      // p2.classList.remove('visible');
     }
     else{
       grafics.classList.remove('fixed');

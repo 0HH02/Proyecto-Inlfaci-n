@@ -3,7 +3,7 @@ var IsShow = false;
 window.addEventListener('scroll', () => {
     
     
-    if( document.querySelector('.container-section9').getBoundingClientRect().top <= 200){
+    if(!document.querySelector('.final-section').classList.contains('displayNone') && document.querySelector('.container-section9').getBoundingClientRect().top <= 0){
         
         document.querySelector('.text-introduction9').classList.add('visible');
         if(!IsShow)
@@ -13,7 +13,6 @@ window.addEventListener('scroll', () => {
         }
     }
     else{
-        IsShow = false;
         document.querySelector('.text-introduction9').classList.remove('visible');
     }
 });
@@ -25,11 +24,23 @@ function anima (){
             data.push(randomData(index));
             index = index+1;
         }
+        var line3=[]
+        data.map(item => 
+          {
+          line3.push({
+              name: item.name,
+              value: 
+              [item.value[0], 200]
+              })
+          });
             myChart.setOption({
             series: [
                 {
                 data: data
-                }
+                },
+                {
+                  data: line3,
+                },
             ]
             });
         
@@ -52,20 +63,21 @@ function randomData(i) {
     document.querySelector('.precio').innerHTML = `${Math.round((value))}`
     document.querySelector('.oferta-p').style.position = 'relative';
     document.querySelector('.oferta-p').style.top = `${200 - value}`;
-    if (Math.round(-200 + value + demanda) > oferta)
-    {
-    document.querySelector('.oferta').classList.add('text-verde');
-    document.querySelector('.oferta').classList.remove('text-rojo');
-    document.querySelector('.subir img').src = 'assets/incrementar.png';
-    
-}else{
-    document.querySelector('.oferta').classList.add('text-rojo');
-    document.querySelector('.oferta').classList.remove('text-verde');
-    document.querySelector('.subir img').src = 'assets/flecha-hacia-abajo.png';
 
-
-    }   
-    oferta = Math.round(-200 + value + demanda);
+    if (i%10 == 0){
+      if (Math.round(-200 + value + demanda) >= oferta)
+      {
+        document.querySelector('.oferta').classList.add('text-verde');
+        document.querySelector('.oferta').classList.remove('text-rojo');
+        document.querySelector('.subir img').src = 'assets/incrementar.png';
+        
+      }else{
+        document.querySelector('.oferta').classList.add('text-rojo');
+        document.querySelector('.oferta').classList.remove('text-verde');
+        document.querySelector('.subir img').src = 'assets/flecha-hacia-abajo.png';
+      }   
+      oferta = Math.round(-200 + value + demanda);
+    }
 
     return {
       name: now.toString(),
@@ -82,6 +94,16 @@ function randomData(i) {
   for (var i = 0; i < 100; i++) {
     data.push(randomData(i));
   }
+  var line2 = []
+  data.map(item => 
+      {
+      line2.push({
+          name: item.name,
+          value: 
+          [item.value[0], 200]
+          })
+      });
+    
   var option = {
     title: {
       text: 'Estabilización de los precios'
@@ -96,7 +118,9 @@ function randomData(i) {
       type: 'time',
       splitLine: {
         show: false
-      }
+      },
+      name: 'Tiempo'
+
     },
     yAxis: {
       type: 'value',
@@ -105,7 +129,7 @@ function randomData(i) {
         show: false
       },
       min: 120,
-      
+      name: 'Precio'
     },
     series: [
       {
@@ -113,6 +137,12 @@ function randomData(i) {
         type: 'line',
         showSymbol: false,
         data: data
+      },
+      {
+        name: 'Line at 200',
+        type: 'line',
+        showSymbol: false,
+        data: line2,
       }
     ]
   };

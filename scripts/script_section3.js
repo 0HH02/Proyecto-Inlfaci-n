@@ -2,37 +2,12 @@ fetch('assets/image-dolar.txt')
     .then(response => response.text())
     .then(data => {
         paperDataURI = data;
-        
+        CargarGrafica(data)
     })
     .catch((error) => {
         console.error('Error:', error);
     });
 let paperDataURI;
-var isView = false;
-window.addEventListener('scroll', () => {
-
-    const section = document.getElementById('section3');
-    const container = document.getElementsByClassName('container-section3')[0];
-
-
-    if (container.getBoundingClientRect().top <= 0) {
-        if (!isView) {
-            isView = true;
-            CargarGrafica(paperDataURI)
-        }
-        section.classList.add('fixed2');
-    }else if (container.getBoundingClientRect().bottom >= window.innerHeight) {
-        section.classList.remove('fixed2');
-      }
-      else{
-        section.classList.remove('fixed2');
-      }
-});
-
-
-
-
-
 var chartDom = document.getElementById('inflacion');
 var myChart = echarts.init(chartDom);
 function CargarGrafica(paperDataRUI){

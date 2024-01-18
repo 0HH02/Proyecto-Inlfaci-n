@@ -140,7 +140,7 @@ data.map(item =>
             data: data
             },
             {
-                data: line1
+              data: line1
             }
         ]
         });
