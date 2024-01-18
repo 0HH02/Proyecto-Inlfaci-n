@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
         if (!IsView1) {
           // Si el objeto está completamente en pantalla, agrega la clase 'move-right'
           IsView1 = true
-          PIB_Graf_Draw(pib_graf,import_export_pib_emision.pib.First, 'Estadísticas en Cuba antes del 2012', 900, 600)
+          PIB_Graf_Draw(pib_graf,import_export_pib_emision.pib.First, 'Estadísticas en Cuba antes del 2012', 750, 500)
           pib_graf.classList.add('visible');
           pib_graf.classList.add('move-right');
         }
