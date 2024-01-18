@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+
 body {
     margin: 0;
 }
@@ -92,7 +93,7 @@ h1 {
     display: flex;
     justify-content: start;
     align-items: center;
-    font-size: 7rem;
+    font-size: 6rem;
     padding-left: 10%;
 }
 
@@ -146,7 +147,7 @@ h1 {
     bottom: 0;
     width: 35%;
     height: 20%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 
 }
 
@@ -410,7 +411,6 @@ img {
     padding: 5% 10%;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
     background: linear-gradient(to right, #faebd7 60%, white 40%);
 }
 
@@ -546,9 +546,9 @@ span {
 }
 
 .text-introduction7 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
-    width: 70%;
+    width: 80%;
 
 }
 
@@ -693,8 +693,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
-    width: 80%;
+    font-size: 2.5rem;
+    width: 85%;
     text-align: center;
 }
 
