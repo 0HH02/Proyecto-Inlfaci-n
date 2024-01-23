@@ -13,7 +13,7 @@ h1 {
 }
 
 .globo {
-    height: 90%;
+    height: 60%;
     animation: globo 1s linear infinite;
 }
 
@@ -87,14 +87,25 @@ h1 {
     font-style: normal;
 }
 
+.subtitle-section00 {
+    display: flex;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.autores {
+    margin-left: 1rem;
+}
+
+
 #section00 {
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
-    font-size: 6rem;
-    padding-left: 10%;
+    font-size: 4rem;
+    padding-left: 5%;
 }
 
 .grafic1 {
@@ -730,15 +741,18 @@ img {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     height: 40px;
+    width: 13rem;
 }
 
 .back-button p {
-    margin: 0;
+    margin: 0 0 0 1rem;
+
 }
 
 .text-introduction-title-11_2 {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     height: min-content;
@@ -751,4 +765,21 @@ img {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+.volver {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metodo {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.metodo a {
+    text-decoration: none;
+    color: #9bcc48;
 }
